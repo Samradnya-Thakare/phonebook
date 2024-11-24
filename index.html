@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneBook</title>
+    
+</head>
+
+<body>
+    <h1>Contact Book</h1>
+
+    <input type="text" id="search" placeholder="Search...">
+    <button type="button" onclick="search()">Search</button>
+    <p id="result"></p>
+    <script>
+        const Contacts = {
+            Samradnya: "7558500533",
+            Mom: "7057335711",
+            Dad: "8605042196",
+            Anjali:"8376897367",
+            Mansi:"9087654321"
+        }
+
+        function search(){
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value;
+            const mobile = Contacts[query]
+            const result = document.getElementById("result");
+            if(mobile){
+                result.innerText=`Mobile Number of ${query} is ${mobile}` ;
+            }
+            else{
+              result.innerText=  `Contact Not Found`
+            }
+        }
+    </script>
+</body>
+
+</html>
